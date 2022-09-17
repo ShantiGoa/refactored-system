@@ -1,0 +1,25 @@
+{
+  "name": "refactored-system",
+  "version": "1.0.0",
+  "description": "simple bot",
+  "main": "index.js",
+  "scripts": {
+    "Debug": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShantiGoa/refactored-system.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShantiGoa/refactored-system/issues"
+  },
+  "homepage": "https://github.com/ShantiGoa/refactored-system#readme",
+  "dependencies": {
+    "har-validator": "^5.1.5",
+    "nodemon": "^2.0.20",
+    "telebot": "^1.4.1",
+    "uuid": "^9.0.0"
+  }
+}
