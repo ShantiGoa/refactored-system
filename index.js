@@ -1,7 +1,24 @@
-const telebot = require("telebot")
+const botApi = require('./connectManager/connectToApi.js')
+const mainMenu = require('./Menu/mainMenu.js')
 
-const chatBot = new telebot("5429085859:AAGCLNjJdKGrp9V-nx2RBtZhYixP2y7k6cA")
 
-chatBot.on('text', (msg) => msg.reply.text(msg.text));
+// Command /start
+botApi.on('/start', msg => {
 
-chatBot.start();
+    startupMessage = mainMenu.getTextStartup
+    messageBeforeMenu = mainMenu.getTextMenu
+    replyMarkup = mainMenu.getMainMenu(botApi)
+    botApi.sendMessage(msg.from.id, startupMessage)
+    botApi.sendMessage(msg.from.id, messageBeforeMenu, {replyMarkup})
+    
+});
+
+// Button callback
+botApi.on('callbackQuery', (msg) => {
+
+    console.log('callbackQuery data:', msg.data);
+    botApi.answerCallbackQuery(msg.id);
+
+});
+
+botApi.start();
